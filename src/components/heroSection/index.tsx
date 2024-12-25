@@ -15,7 +15,7 @@ const HeroSection = () => {
                 mt: "16px",
                 p: "16px",
                 // Updated background with linear gradient
-                background: "linear-gradient(135deg, #FFFFFF 0%, #FFD9DA 30%, #F63C80 60%, #A07ADC 100%)",
+                //background: "linear-gradient(135deg, #FFFFFF 0%, #FFD9DA 30%, #F63C80 60%, #A07ADC 100%)",
                 py: '80px'
             }}
         >
@@ -26,7 +26,7 @@ const HeroSection = () => {
             </Box> */}
 
             {/* Title Section */}
-            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", px: '60px' }}>
+            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", px: { sm: '60px', md: '120px', lg: '132px' } }}>
                 <Box sx={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                     <Typography sx={{ fontSize: "36px", fontWeight: "600", flexWrap: "wrap",  fontFamily: 'Montserrat' }}>
                         The Latin Dance 

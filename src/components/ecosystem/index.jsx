@@ -59,7 +59,7 @@ const styles = {
         mb: "24px",
     },
     container: {
-        background: "linear-gradient(180deg, #FFD1E3, #FCEBF4)",
+        //background: "linear-gradient(180deg, #FFD1E3, #FCEBF4)",
         minHeight: "420px",
         width: "100%",
         mt: "16px",
