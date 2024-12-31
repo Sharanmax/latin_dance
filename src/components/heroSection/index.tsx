@@ -19,11 +19,6 @@ const HeroSection = () => {
                 py: '80px'
             }}
         >
-            {/* Header Section */}
-            {/* <Box sx={{ display: "flex", justifyContent: "flex-start", alignItems: "center" }}>
-                <NightlifeIcon sx={{ fontSize: "32px", mr: "8px" }} />
-                <Typography sx={{ fontSize: "32px", fontWeight: "bold" }}>elementor Ai</Typography>
-            </Box> */}
 
             {/* Title Section */}
             <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", px: { sm: '60px', md: '120px', lg: '132px' } }}>
