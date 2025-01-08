@@ -6,148 +6,123 @@ import "swiper/css/effect-cards";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCards } from "swiper/modules";
-
-import Link from "next/link";
 import Image from "next/image";
-import { FiArrowRight } from "react-icons/fi";
+//import { FiArrowRight } from "react-icons/fi";
 import { useRouter } from "next/router";
+import { Box, Typography } from "@mui/material";
+import VideoUpload from "@components/videoUpload";
 
 const HireCard = ({
   title,
   description,
-  subtitles,
   imageSrc,
-  buttonText,
-  ctaTextColor,
   backgroundColor,
   imageSize,
-  pathname,
 }) => {
   const router = useRouter();
-  const isHome = router.pathname === "/";
 
   return (
-    <div
-      className="flex flex-row items-center justify-center relative overflow-hidden  p-12 h-[450px] "
-      style={{ background: backgroundColor }}
+    <Box
+      sx={{
+        background: backgroundColor,
+        display: "flex",
+        flexDirection: 'column',
+        justifyContent: "space-between",
+        alignItems: "center",
+        textAlign: 'center',
+        color: '#fff',
+        height: '100%',
+        maxHeight: '498px',
+        p: '46px'
+      }}
     >
-      <div className="max-w-[60%]">
-        <h3 className="text-2xl font-semibold text-white">{title}</h3>
-        <p className="text-sm font-medium text-white mb-3">{description}</p>
-        {Object.entries(subtitles).map(([subtitle, subdescription], index) => (
-          <div key={index} className="mb-3 max-w-[95%]">
-            <h4 className="text-md font-semibold text-white">{subtitle}</h4>
-            <p className="text-xs font-normal text-white">{subdescription}</p>
-          </div>
-        ))}
-        {isHome && (
-          <Link href={pathname}>
-            <button
-              className="flex justify-center items-center space-x-2 text-sm font-bold bg-white rounded-lg py-3.5 w-[200px] mt-8"
-              style={{ color: ctaTextColor }}
-              aria-label={buttonText}
-            >
-              <span>{buttonText}</span>
-              <FiArrowRight size={24} />
-            </button>
-          </Link>
-        )}
-      </div>
+      {/* Title */}
+      <Typography
+        sx={{ fontFamily: "Montserrat", fontSize: "40px", fontWeight: "600", mb: '24px' }}
+      >
+        {title}
+      </Typography>
 
-      <div className="flex items-center justify-center">
+      {/* Image/Icon */}
         <Image
           src={imageSrc}
           alt={title}
           width={imageSize}
-          height={imageSize}
+          height={'100%'}
           objectFit="contain"
         />
-      </div>
-    </div>
+
+      {/* Description */}
+      <Typography
+        sx={{ fontFamily: "Montserrat", fontSize: "24px", fontWeight: "500", mt: '24px' }}
+      >
+        {description}
+      </Typography>
+    </Box>
   );
 };
 
 const HiringCarousel = ({ maxWidth = 650 }) => {
   const cards = [
     {
-      title: "One Day Job",
-      description:
-        "Need a chef or hospitality expert for a single-day event? Our One Day Job feature connects you with professionals for birthdays, festivals, and more.",
-      subtitles: {
-        "Affordable Rates":
-          "Access skilled chefs and staff at competitive prices, ensuring quality service that fits your budget.",
-        "Verified Professionals":
-          "Rest easy knowing all professionals are vetted to ensure quality and safety in your home.",
-      },
-      imageSrc: "/assets/home/images/homeFood.png",
-      buttonText: "Hire for One Day",
-      ctaTextColor: "#F57A2B",
-      backgroundColor: "linear-gradient(270deg, #FAB005 0%, #F47620 100%)",
-      imageSize: 435,
-      pathname: "/horecah/vc-list/jobseeker",
+      title: "Upload Your Dance",
+      description: "Share a video link or file of your dance performance.",
+      imageSrc: "/assets/Subtract.png",
+      imageSize: "234px",
+      backgroundColor: "linear-gradient(90deg, #FF512F 0%, #DD2476 100%)",
     },
     {
-      title: "Niche Job Titles",
-      description:
-        "Find specialized professionals not available on other platforms, from pastry chefs to inventory managers.",
-      subtitles: {
-        "Bulk Hiring Made Easy":
-          "Need a large team fast? Reach out to us for streamlined bulk hiring solutions",
-      },
-      imageSrc: "/assets/home/images/homeAllJobs.png",
-      buttonText: "Post Job",
-      ctaTextColor: "#8E6BEA",
-      backgroundColor: "linear-gradient(180deg, #D397FA 0%, #8364E8 100%)",
-      imageSize: 434,
-      pathname: "/users/role-selection",
+      title: "Expert Review",
+      description: "Reviewed by a Subject Matter Expert for insights.",
+      imageSrc: "/assets/Group14.png",
+      imageSize: "206px",
+      backgroundColor: "linear-gradient(90deg, #36D1DC 0%, #5B86E5 100%)",
     },
     {
-      title: "Access to Global Suppliers",
+      title: "Detailed Feedback",
       description:
-        "Join a marketplace where you can connect with suppliers from around the world,",
-      subtitles: {},
-      imageSrc: "/assets/home/images/homeglobe.png",
-      buttonText: "Find Supplier",
-      ctaTextColor: "#4390D3",
-      backgroundColor: "linear-gradient(180deg, #87EA9A 0%, #367FDE 100%)",
-      imageSize: 457,
-      pathname: "/horecah/vc-list/supplier",
+        "Receive a report card highlighting strengths and areas to improve.",
+      imageSrc: "/assets/Group16.png",
+      imageSize: "150px",
+      backgroundColor: "linear-gradient(90deg, #205072 0%, #329D9C 100%)",
     },
     {
-      title: "Promote Yourself",
-      description:
-        "Maximize your reach by running targeted ads directly within the platform, boosting visibility to potential clients and staff in the hospitality industry.",
-      subtitles: {},
-      imageSrc: "/assets/home/images/homeAds.png",
-      buttonText: "Run Ads",
-      ctaTextColor: "#FF6D6B",
-      backgroundColor: "linear-gradient(180deg, #FF8999 0%, #FBCB98 100%)",
-      imageSize: 144,
-      pathname: "/users/role-selection",
+      title: "Tailored Growth Plan",
+      description: "Discover your next steps with a customised dance roadmap.",
+      imageSrc: "/assets/Group17.png",
+      imageSize: "206px",
+      backgroundColor: "linear-gradient(90deg, #AA076B 0%, #61045F 100%)",
     },
   ];
 
   return (
-    <Swiper
-      effect={"cards"}
-      grabCursor={true}
-      modules={[EffectCards, Autoplay]}
-      className="select-none"
-      style={{ maxWidth: `${maxWidth}px` }}
-      loop={true}
-      autoplay={{ delay: 1200, pauseOnMouseEnter: true }}
-    >
-      {cards.map((card, index) => (
-        <SwiperSlide
-          key={index}
-          style={{
-            borderRadius: "32px",
-          }}
+    <Box sx={{ px: '220px', display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center', py: '24px', }}>
+      <Box sx={{ ml: '80px'}}>
+        <Swiper
+          effect={"cards"}
+          grabCursor={true}
+          modules={[EffectCards, Autoplay]}
+          className="select-none"
+          style={{ maxWidth: `${maxWidth}px`, }}
+          loop={true}
+          autoplay={{ delay: 1200, pauseOnMouseEnter: true }}
         >
-          <HireCard {...card} />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+          {cards.map((card, index) => (
+            <SwiperSlide
+              key={index}
+              style={{
+                borderRadius: "32px",
+              }}
+            >
+              <HireCard {...card} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Box>
+      <Box sx={{ mr: '80px'}}>
+        <VideoUpload />
+      </Box>
+    </Box>
   );
 };
 
