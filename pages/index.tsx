@@ -17,6 +17,7 @@ const Home: React.FC = () => {
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: "100vh",
+        overflow: 'hidden'
       }}
     >
       <LayerBlur />

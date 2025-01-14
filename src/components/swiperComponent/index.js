@@ -66,29 +66,29 @@ const HiringCarousel = ({ maxWidth = 650 }) => {
   const cards = [
     {
       title: "Upload Your Dance",
-      description: "Share a video link or file of your dance performance.",
+      description: "Share a video link or file of your dance.",
       imageSrc: "/assets/Subtract.png",
       imageSize: "234px",
       backgroundColor: "linear-gradient(90deg, #FF512F 0%, #DD2476 100%)",
     },
     {
-      title: "Expert Review",
-      description: "Reviewed by a Subject Matter Expert for insights.",
+      title: "Expert Analysis",
+      description: "Reviewed by a trusted Subject Matter Expert.",
       imageSrc: "/assets/Group14.png",
       imageSize: "206px",
       backgroundColor: "linear-gradient(90deg, #36D1DC 0%, #5B86E5 100%)",
     },
     {
-      title: "Detailed Feedback",
+      title: "Structured Feedback",
       description:
-        "Receive a report card highlighting strengths and areas to improve.",
+        "Receive a dance report card.",
       imageSrc: "/assets/Group16.png",
       imageSize: "150px",
       backgroundColor: "linear-gradient(90deg, #205072 0%, #329D9C 100%)",
     },
     {
-      title: "Tailored Growth Plan",
-      description: "Discover your next steps with a customised dance roadmap.",
+      title: "Customised Road map",
+      description: "Discover your tailored next steps.",
       imageSrc: "/assets/Group17.png",
       imageSize: "206px",
       backgroundColor: "linear-gradient(90deg, #AA076B 0%, #61045F 100%)",
